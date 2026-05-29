@@ -1,10 +1,12 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { useRouter } from "next/navigation";
 import { DashboardLayout } from "@/components/dashboard-layout";
 import { Upload, FileText, Sparkles, CreditCard, X } from "lucide-react";
 
 export default function UploadPage() {
+  const router = useRouter();
   const [file, setFile] = useState<File | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -146,6 +148,7 @@ export default function UploadPage() {
               {isProcessing ? "Gerando..." : "Gerar Resumo com IA"}
             </button>
             <button
+              onClick={() => router.push("/flashcards-ia")}
               disabled={!file}
               className="flex flex-1 items-center justify-center gap-2 rounded-lg border border-border bg-card px-4 py-3 font-medium text-foreground transition-colors hover:bg-secondary disabled:cursor-not-allowed disabled:opacity-50"
             >

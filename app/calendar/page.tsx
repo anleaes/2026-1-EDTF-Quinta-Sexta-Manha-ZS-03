@@ -27,7 +27,7 @@ const months = [
 ];
 
 export default function CalendarPage() {
-  const [currentDate, setCurrentDate] = useState(new Date(2024, 5, 1));
+  const [currentDate, setCurrentDate] = useState(new Date());
   const [showModal, setShowModal] = useState(false);
   const [newEvent, setNewEvent] = useState({ name: "", date: "", type: "Prova" as const });
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { DashboardLayout } from "@/components/dashboard-layout";
 import { FileText, CreditCard, CheckCircle, Flame, Plus, Clock } from "lucide-react";
 
@@ -31,10 +32,13 @@ export default function DashboardPage() {
           <h1 className="text-2xl font-bold text-foreground">Dashboard</h1>
           <p className="text-muted-foreground">Bem-vindo de volta! Continue seus estudos.</p>
         </div>
-        <button className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2.5 font-medium text-primary-foreground transition-colors hover:bg-primary/90">
+        <Link
+          href="/upload"
+          className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2.5 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+        >
           <Plus className="h-5 w-5" />
           Novo Resumo
-        </button>
+        </Link>
       </div>
 
       <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
